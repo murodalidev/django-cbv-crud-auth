@@ -4,23 +4,16 @@
 Django class based view
 
         -ListView
-        
-        -delatiView
-        
+        -detailView
         -CreateView
-        
         -UpdateView
-        
         -DeleteView
 
 Auth with class based view
 
         -Register
-        
         -Login
-        
         -Logout
-        
         -Update
 
 Counting post views with F model
