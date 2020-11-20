@@ -1,0 +1,36 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+
+    <h2>Authors</h2>
+    <a href="{% url 'author-create' %}" class="btn btn-primary mb-3">Add Author</a>
+    {% for author in authors %}
+        <div class="card mb-3">
+            <div class="card-header">
+                {{ author.salutation }}
+            </div>
+            <div class="card-body">
+                <a href="{% url 'author-detail' author.id %}">{{ author.name }}</a> <br>
+                {{ author.email }}
+            </div>
+        </div>
+
+    {% endfor %}
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+{% endblock %}

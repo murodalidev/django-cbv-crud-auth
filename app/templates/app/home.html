@@ -1,0 +1,23 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .book {
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .book img {
+            width: 100%;
+        }
+    </style>
+<div class="book">
+    <img src="{% static 'img/books.jpg' %}" alt="">
+</div>
+{% endblock %}

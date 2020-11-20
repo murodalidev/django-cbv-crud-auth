@@ -1,0 +1,19 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+
+    <h2>Detail</h2>
+    <a href="{% url 'author-update' detail.id %}" class="btn btn-primary mb-3">Update Author</a>
+    <a href="{% url 'author-delete' detail.id %}" class="btn btn-warning mb-3">Delete Author</a>
+    <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-4">{{detail.name}}</h1>
+            <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted"><img src="{{detail.headshot.url}}" width="150px" alt=""></small>
+                <small class="text-muted">{{detail.salutation}}</small>
+                <small class="text-muted">{{detail.email}}</small>
+                <small class="text-muted">{{detail.last_login}}</small>
+            </div>
+        </div>
+{#        <a href="{% url 'books:edit-detail' slug=book.slug %}" class="btn btn-primary">Edit book</a>#}
+{#        <a href="{% url 'books:delete-detail' slug=book.slug %}" class="btn btn-primary">Delete book</a>#}
+{% endblock %}

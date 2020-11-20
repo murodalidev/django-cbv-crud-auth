@@ -1,0 +1,43 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+    <h2>Publishers</h2>
+    <a href="{% url 'publisher-create' %}" class="btn btn-primary mb-3">Add Publisher</a>
+
+    {% for publisher in publishers %}
+        <div class="card mb-3">
+            <div class="card-header">
+                <a href="{% url 'publisher-detail' publisher.id %}">
+                    {{ publisher.name }}
+                </a>
+            </div>
+            <div class="card-body">
+                {{ publisher.address }} <br>
+                {{ publisher.city }} <br>
+                {{ publisher.state_province }}<br>
+                {{ publisher.country }}<br>
+            </div>
+            <div class="card-footer">
+                {{ publisher.website }}
+            </div>
+        </div>
+
+    {% endfor %}
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">next</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+{% endblock %}
