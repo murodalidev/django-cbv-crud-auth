@@ -17,3 +17,5 @@ Auth with class based view
         -Update
 
 Counting post views with F model
+        
+        -post.update(views=F('views') + 1)
