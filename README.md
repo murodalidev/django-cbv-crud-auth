@@ -1,6 +1,7 @@
 # django-cbv-crud-auth
 
 Django class based view
+
   -ListView
   -delatiView
   -CreateView
