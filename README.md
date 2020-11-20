@@ -1,0 +1,1 @@
+# django-cbv-crud-auth
