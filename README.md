@@ -23,4 +23,4 @@ Auth with class based view
         
         -Update
 
-Counting views with F model
+Counting post views with F model
