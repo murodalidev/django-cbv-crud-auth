@@ -4,7 +4,7 @@
 Django class based view
 
         -ListView
-        -detailView
+        -DetailView
         -CreateView
         -UpdateView
         -DeleteView
